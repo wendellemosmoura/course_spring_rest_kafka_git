@@ -1,6 +1,7 @@
 package com.wendellemos.api.controller;
 
 import com.wendellemos.api.dto.CarPostDTO;
+import com.wendellemos.api.message.KafkaProducerMessage;
 import com.wendellemos.api.service.CarPostStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,15 @@ public class CarPostController {
 
     @Autowired
     private CarPostStoreService carPostStoreService;
+
+    @Autowired
+    private KafkaProducerMessage kafkaProducerMessage;
+
+    @PostMapping("/post")
+    public ResponseEntity postCarForSale(@RequestBody CarPostDTO carPostDTO) {
+        kafkaProducerMessage.sendMessage(carPostDTO);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
     @GetMapping("/posts")
     public ResponseEntity<List<CarPostDTO>> getCarSales() {
