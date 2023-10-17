@@ -11,7 +11,7 @@ public class KafkaProducerMessage {
     @Autowired
     private KafkaTemplate<String, CarPostDTO> kafkaTemplate;
 
-    private final String KAFKA_TOPIC = "car-post-topic";
+    private static final String KAFKA_TOPIC = "car-post-topic";
 
     public void sendMessage(CarPostDTO carPostDTO) {
         kafkaTemplate.send(KAFKA_TOPIC, carPostDTO);

@@ -4,12 +4,14 @@ import com.wendellemos.api.dto.CarPostDTO;
 import com.wendellemos.api.dto.OwnerPostDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class CarPostStoreClient {
 
     private final String USER_STORE_SERVICE_URI = "http://localhost:8080/user";
