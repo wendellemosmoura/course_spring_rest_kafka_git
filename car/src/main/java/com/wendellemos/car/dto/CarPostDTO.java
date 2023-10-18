@@ -1,4 +1,4 @@
-package com.wendellemos.api.dto;
+package com.wendellemos.car.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
