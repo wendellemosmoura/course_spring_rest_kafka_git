@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -19,7 +21,7 @@ public class CarPostDTO {
     private String description;
     private String engineVersion;
     private String city;
-    private String createdDate;
+    private LocalDateTime createdDate;
     private Long ownerId;
     private String ownerName;
     private String ownerType;

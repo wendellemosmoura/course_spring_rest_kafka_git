@@ -7,6 +7,7 @@ import com.wendellemos.car.repository.OwnerPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -61,7 +62,7 @@ public class CarPostServiceImpl implements CarPostService {
                 .model(carPostEntity.getModel())
                 .description(carPostEntity.getDescription())
                 .engineVersion(carPostEntity.getEngineVersion())
-                .createdDate(carPostEntity.getCreatedDate())
+                .createdDate(LocalDateTime.now())
                 .ownerName(carPostEntity.getOwnerPost().getName())
                 .price(carPostEntity.getPrice()).build();
     }

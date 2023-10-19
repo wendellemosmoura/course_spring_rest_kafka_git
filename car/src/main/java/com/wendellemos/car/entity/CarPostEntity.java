@@ -2,8 +2,10 @@ package com.wendellemos.car.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "car_post")
@@ -34,7 +36,7 @@ public class CarPostEntity {
     private String city;
 
     @Column(name = "car_created")
-    private String createdDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "car_post_contact")
     private String contact;
